@@ -158,10 +158,3 @@ El servicio [consultaCalificacionesService](src/main/java/com/api/Calificaciones
 | 7 | No hay calificaciones en ese periodo | `PERIODO_NO_ENCONTRADO` |
 
 > **Nota:** actualmente el controlador captura estas excepciones, imprime el código en la consola del servidor (`Error en la consulta: ...`) y responde **200 con cuerpo vacío**. Si se omite algún parámetro en la URL, Spring responde **400 Bad Request** antes de llegar al servicio.
-
-## Mejoras pendientes
-
-- Devolver los códigos de error al cliente con un estado HTTP adecuado (400, 401, 403, 404) en lugar de una respuesta vacía.
-- Exponer el promedio del periodo usando `calculadoraService`, que ya existe pero aún no se utiliza.
-- Enviar las credenciales en el cuerpo de una petición `POST` (o mediante autenticación) en lugar de la URL, y almacenar las contraseñas cifradas (por ejemplo, con BCrypt).
-- Mover la contraseña de la base de datos fuera de `application.properties` (variables de entorno).
